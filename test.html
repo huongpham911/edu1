@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Images</title>
+    <style>
+        img { max-width: 300px; margin: 10px; border: 2px solid #ccc; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Test Images</h1>
+    <div id="images"></div>
+    
+    <script>
+        // Test direct image access
+        const testImages = [
+            '/img/logo.jpg',
+            '/img/516511116_122145640058771210_4298189710777537475_n.jpg',
+            '/img/517406943_122142901556771210_3915854332728665203_n.jpg'
+        ];
+        
+        const container = document.getElementById('images');
+        
+        testImages.forEach(imgPath => {
+            const img = document.createElement('img');
+            img.src = imgPath;
+            img.alt = 'Test image';
+            img.onload = () => console.log('✅ Loaded:', imgPath);
+            img.onerror = () => {
+                console.log('❌ Failed:', imgPath);
+                const error = document.createElement('p');
+                error.className = 'error';
+                error.textContent = `Failed to load: ${imgPath}`;
+                container.appendChild(error);
+            };
+            container.appendChild(img);
+        });
+        
+        // Test API
+        fetch('/api/gallery')
+            .then(r => r.json())
+            .then(data => {
+                console.log('API Response:', data);
+                const apiDiv = document.createElement('div');
+                apiDiv.innerHTML = '<h2>API Response:</h2><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                document.body.appendChild(apiDiv);
+            })
+            .catch(e => console.error('API Error:', e));
+    </script>
+</body>
+</html>

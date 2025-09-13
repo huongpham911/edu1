@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas - <%= school.name %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/"><%= school.name %></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">Beranda</a>
+                <a class="nav-link" href="/tentang">Tentang</a>
+                <a class="nav-link active" href="/fasilitas">Fasilitas</a>
+                <a class="nav-link" href="/prestasi">Prestasi</a>
+                <a class="nav-link" href="/berita">Berita</a>
+                <a class="nav-link" href="/kontak">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1>Fasilitas Sekolah</h1>
+        <div class="row">
+            <% school.facilities.forEach(facility => { %>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= facility %></h5>
+                        <p class="card-text">Fasilitas modern dan lengkap untuk mendukung pembelajaran.</p>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

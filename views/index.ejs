@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - <%= school.name %></title>
+    <meta name="description" content="Website resmi <%= school.name %> - Sekolah Menengah Atas Negeri di <%= school.address.district %>, <%= school.address.regency %>">
+    <meta name="keywords" content="SMA, Ketambe, Aceh Tenggara, pendidikan, sekolah negeri">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/img/logo.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-top bg-primary text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <small>
+                        <i class="fas fa-envelope me-2"></i>info@sman1ketambe.my.id
+                    </small>
+                </div>
+                <div class="col-md-4 text-end">
+                    <small>
+                        <i class="fas fa-clock me-2"></i>Senin - Sabtu: 07:00 - 14:00
+                    </small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/img/logo.jpg" alt="Logo <%= school.name %>" height="60" class="me-3 rounded" style="object-fit: cover; width: 60px;">
+                <div>
+                    <h5 class="mb-0 text-primary fw-bold"><%= school.name %></h5>
+                    <small class="text-muted">Unggul dalam Prestasi, Berkarakter Islami</small>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">
+                            <i class="fas fa-home me-1"></i>Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tentang">
+                            <i class="fas fa-info-circle me-1"></i>Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fasilitas">
+                            <i class="fas fa-building me-1"></i>Fasilitas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/prestasi">
+                            <i class="fas fa-trophy me-1"></i>Prestasi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/berita">
+                            <i class="fas fa-newspaper me-1"></i>Berita
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kontak">
+                            <i class="fas fa-envelope me-1"></i>Kontak
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </nav>
+
+<!-- Gallery Slideshow -->
+<section class="gallery-section py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h2 class="section-title">Galeri Foto</h2>
+                <p class="text-muted">Momen dan kegiatan di <%= school.name %></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="schoolGalleryCarousel" class="carousel slide shadow-lg rounded" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-indicators" id="galleryIndicators">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="carousel-inner rounded" id="gallerySlides">
+                        <!-- Slides will be populated by JavaScript -->
+                        <div class="carousel-item active">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 350px; background: linear-gradient(135deg, #2563eb, #1e40af);">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-images fa-2x mb-3"></i>
+                                    <h4>Memuat Galeri...</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-control-prev" type="button" data-bs-target="#schoolGalleryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#schoolGalleryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Selamat Datang di<br><%= school.name %></h1>
+                <p class="lead mb-4">Sekolah Menengah Atas Negeri yang berkomitmen memberikan pendidikan berkualitas dengan karakter Islami untuk mencetak generasi unggul dan berakhlak mulia.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="/tentang" class="btn btn-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Tentang Kami
+                    </a>
+                    <a href="/kontak" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Hubungi Kami
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="/img/hero-image.jpg" alt="<%= school.name %>" class="img-fluid rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section py-4 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">500+</h3>
+                    <p class="text-muted">Siswa Aktif</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <i class="fas fa-chalkboard-teacher fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">35</h3>
+                    <p class="text-muted">Tenaga Pendidik</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <i class="fas fa-school fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">18</h3>
+                    <p class="text-muted">Ruang Kelas</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="stat-item">
+                    <i class="fas fa-trophy fa-3x text-primary mb-3"></i>
+                    <h3 class="fw-bold">25+</h3>
+                    <p class="text-muted">Prestasi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- School Information -->
+<section class="school-info py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h2 class="section-title">Profil Sekolah</h2>
+                <div class="school-details">
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Nama Sekolah:</div>
+                        <div class="col-8"><%= school.name %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">NPSN:</div>
+                        <div class="col-8"><%= school.npsn %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Alamat:</div>
+                        <div class="col-8"><%= school.address.street %>, <%= school.address.village %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Kecamatan:</div>
+                        <div class="col-8"><%= school.address.district %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Kabupaten:</div>
+                        <div class="col-8"><%= school.address.regency %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Provinsi:</div>
+                        <div class="col-8"><%= school.address.province %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Kode Pos:</div>
+                        <div class="col-8"><%= school.address.postalCode %></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Status:</div>
+                        <div class="col-8"><span class="badge bg-success"><%= school.status %></span></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-4 fw-bold">Waktu Belajar:</div>
+                        <div class="col-8"><%= school.schedule %></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title">Visi & Misi</h2>
+                <div class="visi-misi">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-eye me-2"></i>Visi</h5>
+                            <p class="card-text">Terwujudnya sekolah yang unggul dalam prestasi, berkarakter Islami, dan berwawasan lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-bullseye me-2"></i>Misi</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Melaksanakan pembelajaran yang berkualitas dan inovatif</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Mengembangkan potensi siswa secara optimal</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Menanamkan nilai-nilai Islami dalam kehidupan sehari-hari</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Menciptakan lingkungan belajar yang kondusif</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News -->
+<section class="latest-news py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">Berita Terbaru</h2>
+                <p class="text-muted">Ikuti perkembangan dan kegiatan terbaru di <%= school.name %></p>
+            </div>
+        </div>
+        <div class="row">
+            <% school.news.slice(0, 3).forEach((item, index) => { %>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-calendar-alt text-primary me-2"></i>
+                            <small class="text-muted"><%= item.date %></small>
+                        </div>
+                        <h5 class="card-title"><%= item.title %></h5>
+                        <p class="card-text"><%= item.content.substring(0, 100) %>...</p>
+                        <a href="/berita" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-arrow-right me-2"></i>Baca Selengkapnya
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/berita" class="btn btn-primary">
+                <i class="fas fa-newspaper me-2"></i>Lihat Semua Berita
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="mb-3"><%= school.name %></h5>
+                    <p class="text-light">Sekolah Menengah Atas Negeri yang berkomitmen untuk mencerdaskan generasi bangsa dengan pendidikan berkualitas dan berkarakter.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">Menu Utama</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-light text-decoration-none">Beranda</a></li>
+                        <li><a href="/tentang" class="text-light text-decoration-none">Tentang Kami</a></li>
+                        <li><a href="/fasilitas" class="text-light text-decoration-none">Fasilitas</a></li>
+                        <li><a href="/prestasi" class="text-light text-decoration-none">Prestasi</a></li>
+                        <li><a href="/berita" class="text-light text-decoration-none">Berita</a></li>
+                        <li><a href="/kontak" class="text-light text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-5 col-md-12 mb-4">
+                    <h5 class="mb-3">Alamat & Kontak</h5>
+                    <div class="text-light">
+                        <p><i class="fas fa-map-marker-alt me-2"></i><%= school.address.street %></p>
+                        <p><%= school.address.village %>, <%= school.address.district %></p>
+                        <p><%= school.address.regency %>, <%= school.address.province %> <%= school.address.postalCode %></p>
+                        <p><i class="fas fa-envelope me-2"></i><%= school.email %></p>
+                    </div>
+                    <a href="<%= school.mapsUrl %>" target="_blank" class="btn btn-outline-light btn-sm mt-2">
+                        <i class="fas fa-map me-2"></i>Lihat di Google Maps
+                    </a>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; <%= new Date().getFullYear() %> <%= school.name %>. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">NPSN: <%= school.npsn %></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Gallery Fix -->
+    <script src="/gallery-fix.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
+
+
+<!-- Contact CTA -->
+<section class="contact-cta py-4 bg-primary text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Ingin Bergabung dengan Kami?</h2>
+                <p class="lead mb-4">Bergabunglah dengan keluarga besar <%= school.name %> dan wujudkan masa depan yang gemilang!</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="/kontak" class="btn btn-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>Hubungi Kami
+                    </a>
+                    <a href="<%= school.mapsUrl %>" target="_blank" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-map-marker-alt me-2"></i>Kunjungi Sekolah
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
